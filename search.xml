@@ -12,39 +12,37 @@
 <p>快速简洁且高效的博客框架</p>
 </blockquote>
 <p>其实当时我是不太喜欢这个东西的<br>因为它是静态的，干什么都要比动态的WordPress稍微麻烦点<br>直到一天我发现这个——GitHub Pages<br>这是个GitHub用户的福利，用户可以在上面托管自己的静态的个人网站<br>（因为是个人网站，所以一个账号只有一个啦）<br>最主要的是——无限流量无限时长啊！<br>有<del>便宜占</del>好事多好啊<br>于是我决定——搭建自己的个人博客</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>##准备工作</p>
-<ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
 <li>Git客户端</li>
 <li>Node.js的安装</li>
 <li>GitHub账号的申请</li>
 </ul>
-<p>###Git客户端<br>因为我是Windows用户，所以我选择了<a href="https://gitforwindows.org/" target="_blank" rel="noopener">Git For Windows</a><br>进入之后点击<strong>Download</strong>下载安装就好了<br><img src="http://ww2.sinaimg.cn/large/00711cMmly1foj450zhsgj30q40eojtr.jpg" alt="gitforwin主页"></p>
-<p>###Node.js的安装<br>进入<a href="https://nodejs.org" target="_blank" rel="noopener">Node.js官网</a><br>点击左面那个最新的<strong>LTS</strong>版本下载安装就好了<br><img src="http://ww1.sinaimg.cn/large/0060lm7Tly1foj46j8bm3j30op0ie3za.jpg" alt="nodejs主页"></p>
-<p>###GitHub账号的申请<br>首先当然是要进入<a href="https://github.com" target="_blank" rel="noopener">GitHub</a><br>进去之后直接就可以注册<br><img src="http://ww1.sinaimg.cn/large/00711cMmly1foj475bia8j30u00ixdgr.jpg" alt="github主页"><br>第一列是<strong>用户名</strong><br>第二列是<strong>Email</strong><br>第三列是<strong>密码</strong><br>输完之后点击<strong>Sign up for GitHub</strong>注册就好了</p>
+<h3 id="Git客户端"><a href="#Git客户端" class="headerlink" title="Git客户端"></a>Git客户端</h3><p>因为我是Windows用户，所以我选择了<a href="https://gitforwindows.org/" target="_blank" rel="noopener">Git For Windows</a><br>进入之后点击<strong>Download</strong>下载安装就好了<br><img src="http://ww2.sinaimg.cn/large/00711cMmly1foj450zhsgj30q40eojtr.jpg" alt="gitforwin主页"></p>
+<h3 id="Node-js的安装"><a href="#Node-js的安装" class="headerlink" title="Node.js的安装"></a>Node.js的安装</h3><p>进入<a href="https://nodejs.org" target="_blank" rel="noopener">Node.js官网</a><br>点击左面那个最新的<strong>LTS</strong>版本下载安装就好了<br><img src="http://ww1.sinaimg.cn/large/0060lm7Tly1foj46j8bm3j30op0ie3za.jpg" alt="nodejs主页"></p>
+<h3 id="GitHub账号的申请"><a href="#GitHub账号的申请" class="headerlink" title="GitHub账号的申请"></a>GitHub账号的申请</h3><p>首先当然是要进入<a href="https://github.com" target="_blank" rel="noopener">GitHub</a><br>进去之后直接就可以注册<br><img src="http://ww1.sinaimg.cn/large/00711cMmly1foj475bia8j30u00ixdgr.jpg" alt="github主页"><br>第一列是<strong>用户名</strong><br>第二列是<strong>Email</strong><br>第三列是<strong>密码</strong><br>输完之后点击<strong>Sign up for GitHub</strong>注册就好了</p>
 <p>确认一下选择的是第一个免费计划就可以Continue了<br><img src="http://ww3.sinaimg.cn/large/00711cMmly1foj48baqchj30n80ibq3m.jpg" alt="github计划选择"><br>下个页面是要填写你的个人情况，不想填可以<strong>skip this step</strong><br><img src="http://ww3.sinaimg.cn/large/00711cMmly1foj4994s0lj30n10mat9b.jpg" alt="github个人情况"><br>然后去邮箱验证一下就OK</p>
-<p>##正式工作</p>
-<ul>
+<h2 id="正式工作"><a href="#正式工作" class="headerlink" title="正式工作"></a>正式工作</h2><ul>
 <li>生成与配置SSH密钥</li>
 <li>配置GitHub Pages</li>
 <li>安装Hexo</li>
 <li>配置Hexo</li>
 </ul>
-<p>###生成与配置SSH密钥<br>我们先到你心仪的目录右键 <strong>Git Bash Here</strong><br>再设置一下Git的用户名与密码</p>
+<h3 id="生成与配置SSH密钥"><a href="#生成与配置SSH密钥" class="headerlink" title="生成与配置SSH密钥"></a>生成与配置SSH密钥</h3><p>我们先到你心仪的目录右键 <strong>Git Bash Here</strong><br>再设置一下Git的用户名与密码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure>
 <p>然后创建ssh密钥<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱</span><br></pre></td></tr></table></figure></p>
 <p>进入如下路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\User\你的用户名\.ssh</span><br></pre></td></tr></table></figure></p>
 <p>使用记事本打开<strong>id_rsa.pub</strong><br>内容全部复制</p>
 <p>打开GitHub 点击右上角你的头像 再点击<strong>Settings</strong><br>在左侧选项中点击<strong>SSH and GPG keys</strong><br><img src="http://ww3.sinaimg.cn/large/00711cMmly1foj4ag3y3bj30sw089gmg.jpg" alt="设置SSH"><br>点击<strong>new SSH keys</strong> 在title栏取一个合适的名字 再在Key栏把刚刚复制的东西都粘贴进去<br>点击<strong>Add SSH Key</strong><br><img src="http://ww2.sinaimg.cn/large/00711cMmly1foj4cndqwij30to0h5wer.jpg" alt="ssh填写"></p>
 <p>这样SSH密钥就配置完成了</p>
-<p>###配置GitHub Pages<br>我们先打开GitHub 点击右上角+号 选择<strong>New repository</strong><br><img src="http://ww3.sinaimg.cn/large/00711cMmly1foj4dg9rotj30lp0heq3c.jpg" alt="pages创建"><br>在<strong>Repository name</strong>框中输入</p>
+<h3 id="配置GitHub-Pages"><a href="#配置GitHub-Pages" class="headerlink" title="配置GitHub Pages"></a>配置GitHub Pages</h3><p>我们先打开GitHub 点击右上角+号 选择<strong>New repository</strong><br><img src="http://ww3.sinaimg.cn/large/00711cMmly1foj4dg9rotj30lp0heq3c.jpg" alt="pages创建"><br>在<strong>Repository name</strong>框中输入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你的GitHub用户名.github.io</span><br></pre></td></tr></table></figure>
 <p>其余不用动，点击<strong>Create repository</strong>就好了</p>
 <p><img src="http://ww1.sinaimg.cn/large/00711cMmly1foj4emp80ej30sn07bweq.jpg" alt="githubhttps"></p>
 <p>复制弹出页面中的网址 备用</p>
-<p>###安装Hexo<br>选择一个心仪的目录 右键选择<strong>Git Bash Here</strong><br>输入如下命令安装Hexo</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>选择一个心仪的目录 右键选择<strong>Git Bash Here</strong><br>输入如下命令安装Hexo</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <p>如果速度太慢 用<strong>Ctrl+C</strong>停止 使用如下命令更换成国内源后重试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></p>
-<p>###配置Hexo<br>续上步<br>输入命令</p>
+<h3 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h3><p>续上步<br>输入命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
 <p>此命令是在当前文件夹下新建一个blog文件夹 并在该文件夹初始化Hexo<br>待其加载完毕<br>输入命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
